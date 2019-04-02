@@ -1,9 +1,23 @@
 import { actionTypes } from './actionTypes';
 
-export function getListings(list) {
+export function onFetchListings(loading) {
     return {
         type: actionTypes.GET_LISTINGS,
+        loading,
+    }
+}
+
+export function onFetchListingsSuccess(list) {
+    return {
+        type: actionTypes.GET_LISTINGS_SUCCEEDED,
         list,
+    }
+}
+
+export function onFetchListingsFail(error) {
+    return {
+        type: actionTypes.GET_LISTINGS_FAILED,
+        error,
     }
 }
 

@@ -4,6 +4,6 @@ import navReducer from './navReducer';
 import listingsReducer from './listingsReducer';
 
 export default combineReducers({
-    listings: listingsReducer,
+    data: listingsReducer,
     nav: navReducer
 });
