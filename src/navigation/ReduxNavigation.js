@@ -27,14 +27,18 @@ class ReduxNavigation extends React.Component {
     };
 
     render() {
-        const { nav, dispatch } = this.props;
+        const { data, dispatch, nav } = this.props;
 
-        return <App state={nav} dispatch={dispatch} />;
+        return <App state={nav} dispatch={dispatch} data={data} />;
     }
 }
 
-const mapStateToProps = state => ({
-    nav: state.nav
-});
+const mapStateToProps = state => {
+    return {
+        data: state.data,
+        dispatch: state.nav.dispatch,
+        nav: state.nav,
+    };
+};
 
 export default connect(mapStateToProps)(ReduxNavigation);
